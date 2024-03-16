@@ -16,7 +16,7 @@ def calc_var_score(scores, answers_dict):
 def calculate_risk_score():
     data = request.get_json()
 
-    # answer weights
+    # answer weight
     question_scores = {
         # Age - Higher the age lower the risk
         "age": {'18-25': 1, '26-30': 2, '31-35': 3, '36-40': 4, '41-45': 4, '46-50': 5, '51+': 5},
