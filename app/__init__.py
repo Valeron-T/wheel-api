@@ -24,4 +24,7 @@ def create_app():
     from app.routes.risk import bp as risk_bp
     app.register_blueprint(risk_bp, url_prefix='/risk')
 
+    from app.routes.news import bp as news_bp
+    app.register_blueprint(news_bp, url_prefix='/news')
+    
     return app
