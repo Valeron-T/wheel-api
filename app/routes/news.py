@@ -3,7 +3,8 @@ from GoogleNews import GoogleNews
 
 bp = Blueprint('news', __name__)
 
-@bp.route('/news', methods=['GET'])
+
+@bp.route('/', methods=['GET'])
 def get_news():
     googlenews = GoogleNews(lang="en", period="7d")
     googlenews.get_news("stocks")
@@ -20,4 +21,3 @@ def get_news():
         news_data.append(article_data)
 
     return jsonify(news_data)
-
