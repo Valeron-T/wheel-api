@@ -19,5 +19,4 @@ def process_pdf(pdf_data):
     res = concatenate_tables_with_headers(BytesIO(pdf_data))
     print(res)
 
-
     return "Processing complete"

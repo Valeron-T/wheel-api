@@ -3,10 +3,10 @@ import re
 from pymongo import MongoClient
 import tabula
 import pandas as pd
+from app import mongo
 
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', None)
-client = MongoClient('mongodb://localhost:27017/')
 
 
 def format_df(df):
@@ -59,7 +59,7 @@ def categorise(text):
 
     for name in name_split:
         print(name)
-        result = client['final']['names'].count_documents(
+        result = mongo.db.names.count_documents(
 
             {
                 "names": name
